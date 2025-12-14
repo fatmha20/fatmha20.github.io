@@ -138,9 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.innerHTML = `<div class="loader w-5 h-5 border-2 rounded-full"></div><span>Redirecting...</span>`;
         submitBtn.disabled = true;
 
+        console.log("Form submitted. Redirecting to:", REDIRECT_URL);
+
         // Redirect immediately (or with very short delay for UX)
         setTimeout(() => {
-            window.location.href = REDIRECT_URL;
+            window.location.assign(REDIRECT_URL);
         }, 500);
     });
 
