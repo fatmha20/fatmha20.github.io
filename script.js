@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'video6.mp4', 'video7.mp4', 'video8.mp4', 'video9.mp4', 'video10.mp4'
     ];
     const GATE_TIME_SECONDS = 10;
+    const REDIRECT_URL = 'https://trusthubmedia.com/app/aff/go/unzmnx?i=7';
 
     // State
     let currentState = {
@@ -129,28 +130,18 @@ document.addEventListener('DOMContentLoaded', () => {
     playOverlay.addEventListener('click', togglePlay);
     videoEl.addEventListener('click', togglePlay);
 
-    // Form Submission
+    // Form Submission - Redirect to external URL
     signupForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = `<div class="loader w-5 h-5 border-2 rounded-full"></div><span>Unlocking...</span>`;
+        submitBtn.innerHTML = `<div class="loader w-5 h-5 border-2 rounded-full"></div><span>Redirecting...</span>`;
         submitBtn.disabled = true;
 
-        // Simulate API delay
+        // Redirect immediately (or with very short delay for UX)
         setTimeout(() => {
-            currentState.hasSignedUp = true;
-            currentState.isGated = false;
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            
-            updateUI();
-            
-            // Resume playback
-            videoEl.play();
-            currentState.isPlaying = true;
-            playOverlay.style.opacity = '0';
-        }, 1500);
+            window.location.href = REDIRECT_URL;
+        }, 500);
     });
 
     // Start
