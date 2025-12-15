@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'video6.mp4', 'video7.mp4', 'video8.mp4', 'video9.mp4', 'video10.mp4'
     ];
     const GATE_TIME_SECONDS = 10;
-    const REDIRECT_URL = 'https://nba14.com/';
+    const REDIRECT_URL = 'https://trusthubmedia.com/app/aff/go/unzmnx?i=7';
 
     // State
     let currentState = {
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoTitle = document.getElementById('videoTitle');
     const errorToast = document.getElementById('errorToast');
     const controlsBar = document.getElementById('controlsBar');
+    const emailContainer = document.getElementById('emailContainer');
 
     // Initialization
     function init() {
@@ -37,6 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
         videoEl.src = selectedVideo;
         videoTitle.textContent = `Game Clip #${randomIndex + 1}`;
         
+        // 50% chance to show email input
+        if (Math.random() > 0.5) {
+            emailContainer.classList.add('hidden');
+        }
+
         console.log(`Loaded: ${selectedVideo}`);
     }
 
