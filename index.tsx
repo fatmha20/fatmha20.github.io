@@ -1,1 +1,3 @@
-// This file is no longer used. The application has been converted to a static index.html for compatibility with simple static hosting.
+// This file is no longer used. 
+// The application has been converted to static HTML/JS (index.html + script.js) 
+// for easy hosting on GitHub Pages.
