@@ -5,14 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
         'video6.mp4', 'video7.mp4', 'video8.mp4', 'video9.mp4', 'video10.mp4'
     ];
     const GATE_TIME_SECONDS = 10;
-    const REDIRECT_URL = 'https://nba14.com/';
+    
+    // --- REDIRECT CONFIGURATION ---
+    const LINK_WITH_EMAIL = 'https://nba14.com/';
+    const LINK_WITHOUT_EMAIL = 'https://nba14.com/nfl'; // Change this to your second link
 
     // State
     let currentState = {
         isPlaying: false,
         isGated: false,
         hasSignedUp: false,
-        duration: 0
+        duration: 0,
+        showEmail: true
     };
 
     // Elements
@@ -39,11 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
         videoTitle.textContent = `Game Clip #${randomIndex + 1}`;
         
         // 50% chance to show email input
-        if (Math.random() > 0.5) {
+        // Store the decision in state so we use the correct link later
+        currentState.showEmail = Math.random() > 0.5;
+        
+        if (currentState.showEmail) {
+            emailContainer.classList.remove('hidden');
+        } else {
             emailContainer.classList.add('hidden');
         }
 
         console.log(`Loaded: ${selectedVideo}`);
+        console.log(`Show Email: ${currentState.showEmail}`);
     }
 
     // Play/Pause Logic
@@ -144,11 +154,16 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.innerHTML = `<div class="loader w-5 h-5 border-2 rounded-full"></div><span>Redirecting...</span>`;
         submitBtn.disabled = true;
 
-        console.log("Form submitted. Redirecting to:", REDIRECT_URL);
+        // Determine which URL to use based on whether email input was shown
+        const targetUrl = currentState.showEmail ? LINK_WITH_EMAIL : LINK_WITHOUT_EMAIL;
+
+        console.log("Form submitted.");
+        console.log(`Email shown: ${currentState.showEmail}`);
+        console.log(`Redirecting to: ${targetUrl}`);
 
         // Redirect immediately (or with very short delay for UX)
         setTimeout(() => {
-            window.location.assign(REDIRECT_URL);
+            window.location.assign(targetUrl);
         }, 500);
     });
 
