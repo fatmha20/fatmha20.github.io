@@ -1,5 +1,5 @@
 {
-  "name": "StreamGate",
-  "description": "A random video player application that demonstrates content gating after a specific duration.",
+  "name": "NFL Season Pass Gate",
+  "description": "A high-energy, full-screen gatekeeper page with an NFL theme, requiring user registration to view content.",
   "requestFramePermissions": []
 }
