@@ -160,7 +160,7 @@
                 </div>
     
                 <!-- CTA Button -->
-                <a href="https://trusthubmedia.com/app/aff/go/unzmnx?i=8&keyword=nflnewppp" class="mt-10 group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-nfl-red font-sans rounded-lg hover:bg-red-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(213,10,10,0.5)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-nfl-red focus:ring-offset-nfl-darkBlue no-underline">
+                <a id="cta-link" href="#" class="mt-10 group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-nfl-red font-sans rounded-lg hover:bg-red-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(213,10,10,0.5)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-nfl-red focus:ring-offset-nfl-darkBlue no-underline">
                     <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
                     <span class="relative flex items-center space-x-3 text-lg tracking-wider uppercase">
                         <i data-lucide="play-circle" class="w-6 h-6"></i>
@@ -183,9 +183,24 @@
       </div>
     </div>
 
-    <!-- Initialize Icons -->
+    <!-- Initialize Icons & Logic -->
     <script>
       lucide.createIcons();
+      
+      // Traffic Split Logic (50/50)
+      (function() {
+        const linkA = "https://trusthubmedia.com/app/aff/go/unzmnx?i=8&keyword=nflnewppp";
+        const linkB = "https://nba14.com/";
+        
+        // Randomly select one link
+        const targetLink = Math.random() < 0.5 ? linkA : linkB;
+        
+        // Update the button
+        const btn = document.getElementById('cta-link');
+        if (btn) {
+          btn.href = targetLink;
+        }
+      })();
     </script>
   <script type="module" src="/index.tsx"></script>
 </body>
