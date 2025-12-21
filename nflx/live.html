@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Fullscreen Stream</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #000; }
+    #wrap { position: fixed; inset: 0; display: flex; }
+    video { width: 100%; height: 100%; object-fit: contain; background: #000; }
+    #fsBtn {
+      position: fixed; right: 12px; bottom: 12px;
+      padding: 10px 12px; border: 0; border-radius: 10px;
+      background: rgba(255,255,255,.12); color: #fff; cursor: pointer;
+      backdrop-filter: blur(6px);
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <video id="v" controls autoplay muted playsinline></video>
+  </div>
+  <button id="fsBtn">Fullscreen</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script>
+    const STREAM_URL = "https://YOUR-DOMAIN/path/live.m3u8"; // <-- authorized .m3u8 here
+    const video = document.getElementById("v");
+
+    // HLS playback
+    if (window.Hls && Hls.isSupported()) {
+      const hls = new Hls({ lowLatencyMode: true });
+      hls.loadSource(STREAM_URL);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => video.play().catch(()=>{}));
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      // Safari (native HLS)
+      video.src = STREAM_URL;
+      video.play().catch(()=>{});
+    } else {
+      alert("This browser can't play HLS without support.");
+    }
+
+    // Fullscreen button
+    document.getElementById("fsBtn").onclick = async () => {
+      const el = video;
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else await el.requestFullscreen();
+    };
+  </script>
+</body>
+</html>

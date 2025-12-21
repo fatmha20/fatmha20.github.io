@@ -1,0 +1,232 @@
+table.nl_controls-table td
+{
+	padding: 0;
+}
+
+#nl-controls
+{
+	z-index:1000;
+	position: fixed;
+	width:100%;
+	left:0px;
+	bottom:0px;
+	background-color:#000000;
+}
+
+#nl-program-image
+{
+	width:124px;
+	height:70px;
+	border:1px solid #000000;
+	margin: 5px 10px;
+}
+
+.nl-game-logo
+{
+	width:50px;
+	height:45px;
+	margin: 5px 15px;
+}
+
+.nl-thumbnail 
+{
+	width:100%;
+	height:100%;
+	border:1px solid #000000;
+}	
+
+.nl-thumbnail-hover
+{
+	width:100%;
+	height:100%;
+	border:1px solid #ffffff;
+}
+
+#nl-program-title
+{
+	min-width: 200px;
+	height:50%;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: normal;
+	font-family: Arial;
+	text-align:left;
+}
+
+.nl-title-hover 
+{
+	text-decoration:underline;
+}
+
+#nl-program-code
+{
+	color:#c50000;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: Arial;
+	text-align:left;
+}
+
+#nl-receiver-name
+{
+	color:#939393;
+	font-size: 16px;
+	font-family: Arial;
+	text-align:left;
+}
+
+#nl-name-deeplink
+{
+	display:block;
+	text-decoration:none;
+}
+
+#nl-controls-play 
+{
+	width: 26px;
+	height: 30px;
+	background-image: url(../images/chromecastplay.png);
+	background-repeat: no-repeat;
+	margin:0 30px;
+	cursor: pointer;
+}
+
+#nl-controls-pause 
+{
+	width: 26px;
+	height: 30px;
+	background-image: url(../images/chromecastpause.png);
+	background-repeat: no-repeat;
+	margin:0 30px;
+	cursor: pointer;
+}
+
+#nl-controls-cast-on 
+{
+	width: 22px;
+	height: 26px;
+	background-image: url(../images/chromecaston.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+#nl-controls-cast-off 
+{
+	width: 22px;
+	height: 26px;
+	background-image: url(../images/chromecastoff.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+#nl-controls-cc
+{
+	width: 22px;
+	height: 14px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	margin-left: 20px;
+}
+
+.nlCastCCOn
+{
+	background-image: url(../images/chromecastccon.png);
+}
+
+.nlCastCCOff
+{
+	background-image: url(../images/chromecastccoff.png);
+}
+
+#nl-controls-mute 
+{
+	width: 23px;
+	height: 20px;
+	background-image: url(../images/chromecastvolume.png);
+	background-repeat: no-repeat;
+	margin:0 5px 0 30px;
+	cursor: pointer;
+}
+
+#nl-controls-sound 
+{
+	width: 23px;
+	height: 20px;
+	background-image: url(../images/chromecastmute.png);
+	background-repeat: no-repeat;
+	margin:0 5px 0 30px;
+	cursor: pointer;
+}
+
+#nl-controls-volumeslider
+{
+	width: 100px;
+	height:7px;
+	background-color: #979797;
+	border-color: #333 #333 #777 #333;
+	position: relative;
+	cursor:pointer;
+}
+
+#nl-controls-volumebar
+{
+	width:0;
+	height:7px;
+	background-color:#474747;
+	position: absolute;
+	top: 0px;
+	left:0;
+	cursor:pointer;
+}
+
+#nl-controls-volumethumb
+{
+	width:6px;
+	height:18px;
+	background-image:url(../images/thumb.png);
+	background-repeat:no-repeat; 
+	position: absolute;
+	top:-5px;
+	left:-2px;
+	cursor:pointer;
+}
+
+#nl-controls-progress-slider
+{
+	padding-left:10px;
+}
+
+#nl-controls-progresstrack
+{
+	width: 75%;
+	height:10px;
+	background-color: #979797;
+	border-color: #333 #333 #777 #333;
+	position: relative;
+	margin:5px 10px;
+	float:left;
+	cursor:pointer;
+}
+
+#nl-controls-progressbar
+{
+	width:0;
+	height:10px;
+	background-color:#c60000;
+	position: absolute;
+	top: 0px;
+	left:0;
+	cursor:pointer;
+}
+
+#nl-controls-playheadtime , #nl-controls-totaltime
+{
+	width:10%;
+	color:#ffffff;
+	font-size:15px;
+	font-weight:bold;
+	font-family:Arial;
+	text-align:center;
+	line-height:20px;
+	float:left;
+}
