@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'video6.mp4', 'video7.mp4', 'video8.mp4', 'video9.mp4', 'video10.mp4'
     ];
     const GATE_TIME_SECONDS = 10;
-    const REDIRECT_URL = 'https://nba14.com/nfl';
+    const REDIRECT_URL = 'https://fatmha20.github.io/nflx';
 
     // State
     let currentState = {
